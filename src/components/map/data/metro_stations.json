@@ -1,0 +1,309 @@
+{
+  "type": "FeatureCollection",
+  "name": "public-transport-point",
+  "features": [{
+      "type": "Feature",
+      "properties": {
+        "name": "Miyapur",
+        "station": "normal",
+        "line": "red",
+        "mmts_connection": false,
+        "rail_connection": false,
+        "bus_connection": false,
+        "parking": "additional"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [78.3717978000641, 17.496601502631503]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "JNTU College",
+        "station": "normal",
+        "line": "red",
+        "mmts_connection": false,
+        "rail_connection": false,
+        "bus_connection": false,
+        "parking": "street"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [78.38873863220216, 17.498847514636036]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "KPHB Colony",
+        "station": "normal",
+        "line": "red",
+        "mmts_connection": false,
+        "rail_connection": false,
+        "bus_connection": false,
+        "parking": "street"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [78.40251445770265, 17.493490806910362]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kukatpally",
+        "station": "normal",
+        "line": "red",
+        "mmts_connection": false, 
+        "rail_connection": false,
+        "bus_connection": false,
+        "parking": "additional"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [78.41163933277132, 17.485145898091858]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Balanagar",
+        "station": "normal",
+        "line": "red",
+        "mmts_connection": false,
+        "rail_connection": false,
+        "bus_connection": false,
+        "parking": "additional"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [78.422389626503, 17.47652429956328]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Moosapet",
+        "station": "normal",
+        "line": "red",
+        "mmts_connection": false,
+        "rail_connection": false,
+        "bus_connection": false,
+        "parking": "street"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [78.42598915100098, 17.47202146257614]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bharat Nagar",
+        "station": "normal",
+        "line": "red",
+        "mmts_connection": true,
+        "rail_connection": false,
+        "bus_connection": false,
+        "parking": "additional"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [78.43019485473634, 17.464171932700893]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Erragadda",
+        "station": "normal",
+        "line": "red",
+        "mmts_connection": false,
+        "rail_connection": false,
+        "bus_connection": false,
+        "parking": "street"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [78.43351006507875, 17.45722271843133]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ESI",
+        "station": "normal",
+        "line": "red",
+        "mmts_connection": false,
+        "rail_connection": false,
+        "bus_connection": false,
+        "parking": "street"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [78.43816637992859, 17.447688865855877]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "S.R.Nagar",
+        "station": "normal",
+        "line": "red",
+        "mmts_connection": false,
+        "rail_connection": false,
+        "bus_connection": false,
+        "parking": "street"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [78.44144940376283, 17.44200823353795]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ameerpet",
+        "station": "connecting",
+        "line": "red/blue",
+        "mmts_connection": false,
+        "rail_connection": false,
+        "bus_connection": false,
+        "parking": "street"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [78.44473779201509, 17.435549497867356]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Punjagutta",
+        "station": "normal",
+        "line": "red",
+        "mmts_connection": false,
+        "rail_connection": false,
+        "bus_connection": false,
+        "parking": "none"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [78.45116436481477, 17.428537774773453]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Irrum Manzil",
+        "station": "normal",
+        "line": "red",
+        "mmts_connection": false,
+        "rail_connection": false,
+        "bus_connection": false,
+        "parking": "additional"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [78.45572412014009, 17.421131669613683]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khairatabad",
+        "station": "normal",
+        "line": "red",
+        "mmts_connection": true,
+        "rail_connection": false,
+        "bus_connection": false,
+        "parking": "street"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [78.46085786819458, 17.41161128670498]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Lakdi ka pul",
+        "station": "normal",
+        "line": "red",
+        "mmts_connection": true,
+        "rail_connection": false,
+        "bus_connection": false,
+        "parking": "street"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [78.46500992774965, 17.403810345106734]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Assembly",
+        "station": "normal",
+        "line": "red",
+        "mmts_connection": false,
+        "rail_connection": false,
+        "bus_connection": false,
+        "parking": "street"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [78.47081422805788, 17.398133466366485]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nampally",
+        "station": "normal",
+        "line": "red",
+        "mmts_connection": true,
+        "rail_connection": true,
+        "bus_connection": false,
+        "parking": "additional"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [78.47015440464021, 17.392210691760617]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Gandhi Bhavan",
+        "station": "normal",
+        "line": "red",
+        "mmts_connection": false,
+        "rail_connection": false,
+        "bus_connection": false,
+        "parking": "additional"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [78.4731048345566, 17.386047116808307]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Osmania Medical College",
+        "station": "normal",
+        "line": "red",
+        "mmts_connection": false,
+        "rail_connection": false,
+        "bus_connection": false,
+        "parking": "street"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [78.48094224929811, 17.382499383592194]
+      }
+    }
+  ]
+}
