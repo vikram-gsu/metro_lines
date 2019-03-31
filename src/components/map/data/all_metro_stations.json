@@ -170,7 +170,7 @@
         "mmts_connection": false,
         "rail_connection": false,
         "bus_connection": false,
-        "parking": "street"
+        "parking": "additional"
       },
       "geometry": {
         "type": "Point",
@@ -431,6 +431,22 @@
       "geometry": {
         "type": "Point",
         "coordinates": [78.5479760169983, 17.34983960374017]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nagole",
+        "station": "normal",
+        "line": "blue",
+        "mmts_connection": false,
+        "rail_connection": false,
+        "bus_connection": false,
+        "parking": "additional"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [78.55885505676271, 17.390449691534652]
       }
     }
   ]

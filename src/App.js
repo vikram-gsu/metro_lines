@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import 'normalize.css';
 import './App.css';
 
-import {PopupMarker} from './components/map/Map';
+import {MetroMap} from './components/map/MetroMap';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <PopupMarker />
+        <MetroMap />
       </div>
     );
   }
