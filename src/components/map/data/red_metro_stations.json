@@ -304,6 +304,134 @@
         "type": "Point",
         "coordinates": [78.48094224929811, 17.382499383592194]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "MGBS",
+        "station": "normal",
+        "line": "red/green",
+        "mmts_connection": false,
+        "rail_connection": false,
+        "bus_connection": true,
+        "parking": "additional"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [78.48613500595094, 17.379555685503444]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Malakpet",
+        "station": "normal",
+        "line": "red",
+        "mmts_connection": true,
+        "rail_connection": false,
+        "bus_connection": false,
+        "parking": "none"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [78.49383831024171, 17.37715973628925]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "New Market",
+        "station": "normal",
+        "line": "red",
+        "mmts_connection": false,
+        "rail_connection": false,
+        "bus_connection": false,
+        "parking": "street"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [78.50310802459717, 17.37340192373076]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Moosarambagh",
+        "station": "normal",
+        "line": "red",
+        "mmts_connection": false,
+        "rail_connection": false,
+        "bus_connection": false,
+        "parking": "street"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [78.51188421249391, 17.37115948658342]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Dilsukhnagar",
+        "station": "normal",
+        "line": "red",
+        "mmts_connection": false,
+        "rail_connection": false,
+        "bus_connection": true,
+        "parking": "street"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [78.52540254592897, 17.368563754505843]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Chaitanyapuri",
+        "station": "normal",
+        "line": "red",
+        "mmts_connection": false,
+        "rail_connection": false,
+        "bus_connection": false,
+        "parking": "street"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [78.53570759296417, 17.36830776315641]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Victoria Memorial",
+        "station": "normal",
+        "line": "red",
+        "mmts_connection": false,
+        "rail_connection": false,
+        "bus_connection": false,
+        "parking": "additional"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [78.54393124580383, 17.36182082298875]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "LB Nagar",
+        "station": "normal",
+        "line": "red",
+        "mmts_connection": false,
+        "rail_connection": false,
+        "bus_connection": false,
+        "parking": "additional"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [78.5479760169983, 17.34983960374017]
+      }
     }
   ]
 }

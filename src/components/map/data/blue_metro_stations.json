@@ -1,0 +1,21 @@
+{
+  "type": "FeatureCollection",
+  "name": "public-transport-point",
+  "features": [{
+      "type": "Feature",
+      "properties": {
+        "name": "Miyapur",
+        "station": "normal",
+        "line": "red",
+        "mmts_connection": false,
+        "rail_connection": false,
+        "bus_connection": false,
+        "parking": "additional"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [78.3717978000641, 17.496601502631503]
+      }
+    }
+  ]
+}
