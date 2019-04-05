@@ -12,7 +12,7 @@ import {
   Point,
   MapLayer
 } from "react-leaflet";
-import { Feature, Geometry, GeoJsonProperties, GeoJsonObject } from "geojson";
+// import { Feature, Geometry, GeoJsonProperties, GeoJsonObject } from "geojson";
 // import L, { LatLngLiteral } from 'leaflet';
 import { ActualLines } from "./ActualLines";
 import { MetroSidebar } from "./MetroSidebar";

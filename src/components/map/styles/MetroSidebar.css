@@ -1,0 +1,17 @@
+.primary {
+  padding:1em;
+  min-width: 100%;
+  margin: 1em 0;
+  background: none;
+}
+
+.red {
+  border-color: red
+}
+
+.listTabStyle {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  
+}

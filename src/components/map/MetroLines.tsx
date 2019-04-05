@@ -1,4 +1,7 @@
 import * as React from 'react';
+import './styles/MetroSidebar.css';
+
+var classNames = require('classnames');
 
 export interface LinesProps {
   station_names:string[],
@@ -9,7 +12,7 @@ export interface LinesProps {
 export const Lines = (lines:LinesProps) => {
   return (
     <React.Fragment>
-      <ul>
+      <ul className='listTabStyle'>
         {
           lines.line_names.map((line_name:string) => (
             <Stations line_name={line_name} stations={lines.station_names} key={line_name} onLineSelect={lines.onLineSelect} />
@@ -30,7 +33,7 @@ interface StationProps {
 const Stations = (stations:StationProps) => {
   return (
     <li>
-      <button onMouseEnter={() => stations.onLineSelect(stations.line_name, 1)}
+      <button className={classNames('primary', stations.line_name)} onMouseEnter={() => stations.onLineSelect(stations.line_name, 1)}
               onMouseLeave={() => stations.onLineSelect(stations.line_name, -1)}>
         {stations.line_name}
       </button>
