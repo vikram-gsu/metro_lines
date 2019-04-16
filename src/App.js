@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import 'normalize.css';
 import './App.css';
 
-import {MetroMap} from './components/map/MetroMap';
+import {MetroMap} from './components/MainMap/MetroMap';
 
 class App extends Component {
   render() {
