@@ -1,5 +1,5 @@
 .primary {
-  padding:1em;
+  padding: 1em;
   min-width: 100%;
   margin: 1em 0;
   background: none;
@@ -13,7 +13,7 @@
   list-style-type: none;
   display: flex;
   flex-direction: column;
-  
+
 }
 
 .stationList {
@@ -21,6 +21,6 @@
 
 }
 
-.stationList > li {
-  padding:1em 0;
+.stationList>li {
+  padding: 1em 0;
 }
