@@ -18,6 +18,7 @@ interface State {
   sidebar_collapsed: boolean;
   sidebar_selected: string;
   station_marker_radius: number;
+  theme_value: string;
   line_keys: Array<LineKey>;
   position: LatLngLiteral;
   zoom: number;
@@ -29,6 +30,7 @@ export class MetroMap extends React.Component<{}, State> {
     sidebar_collapsed: false,
     sidebar_selected: "home",
     station_marker_radius: 8,
+    theme_value: "openstreetmap.1b68f018",
     line_keys: [
       { color: "red", key: "red-8" },
       { color: "blue", key: "blue-8" },
@@ -39,6 +41,7 @@ export class MetroMap extends React.Component<{}, State> {
     stations_on_line: []
   };
   public mapRef: React.RefObject<any> = React.createRef();
+  public ThemeContext = React.createContext(this.state.theme_value);
 
   private updateStationRadius = (line: string, value: number) => {
     this.setState(prevState => ({
@@ -82,7 +85,7 @@ export class MetroMap extends React.Component<{}, State> {
   public render() {
     const { position, zoom } = this.state;
     return (
-      <>
+      <this.ThemeContext.Provider value={this.state.theme_value}>
         <React.StrictMode>
           <MetroSidebar
             updateStationRadius={this.updateStationRadius}
@@ -90,22 +93,28 @@ export class MetroMap extends React.Component<{}, State> {
             stations_on_line={this.state.stations_on_line}
           />
           <Map center={position} zoom={zoom} ref={this.mapRef}>
-            <TileLayer
+            {/* <TileLayer
               attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
+            /> */}
             {/* <TileLayer
             attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
             id= "mapbox.light"
             url={`https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=${mapboxAccessToken}`}
           /> */}
-
+          
+            <TileLayer
+            attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
+            id= {this.state.theme_value}
+            // id="mapbox.dark"
+            url={`https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoib3NtLWluIiwiYSI6ImNqcnVxMTNrNTJwbHc0M250anUyOW81MjgifQ.cZnvZEyWT5AzNeO3ajg5tg`}
+          />
             <ActualLines
               line_info={[this.getLineInfo("red"), this.getLineInfo("blue")]}
             />
           </Map>
         </React.StrictMode>
-      </>
+      </this.ThemeContext.Provider>
     );
   }
 }
