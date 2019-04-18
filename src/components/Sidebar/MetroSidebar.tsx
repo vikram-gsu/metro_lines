@@ -9,12 +9,14 @@ interface MetroSidebarProps {
   updateStationRadius(line: string, value: number): void;
   zoomToLine(line: string): void;
   stations_on_line: Array<StationInfo>;
+  current_theme: string;
 }
 
 export const MetroSidebar = ({
   updateStationRadius,
   zoomToLine,
-  stations_on_line
+  stations_on_line,
+  current_theme
 }: MetroSidebarProps) => {
   return (
     <Sidebar
@@ -25,6 +27,7 @@ export const MetroSidebar = ({
       position="right"
     >
       <Tab id="home" header="Home" icon="fa fa-home">
+        {current_theme}
         <Lines
           stations_on_line={stations_on_line}
           line_names={metro_lines}
