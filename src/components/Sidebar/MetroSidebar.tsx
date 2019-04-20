@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Sidebar, Tab } from "react-leaflet-sidebarv2";
 import { Lines } from "./MetroLines/MetroLines";
-import { StationInfo } from "../../types/MetroMap.d";
+import { StationInfo } from "../../types/MetroMapData";
 
 const metro_lines = ["red", "green", "blue"];
 

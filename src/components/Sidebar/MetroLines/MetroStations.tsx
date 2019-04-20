@@ -1,6 +1,6 @@
 import * as React from "react";
 import styles from "./MetroLines.module.css";
-import { StationInfo } from "../../../types/MetroMap";
+import { StationInfo } from "../../../types/MetroMapData";
 
 const classNames = require("classnames");
 

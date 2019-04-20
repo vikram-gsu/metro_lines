@@ -1,4 +1,4 @@
-import { MetroStationsData, StationInfo } from "../types/MetroMap";
+import { MetroStationsData, StationInfo } from "../types/MetroMapData";
 const metroStations: MetroStationsData = require("./all_metro_stations.json");
 
 

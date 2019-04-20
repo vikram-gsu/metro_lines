@@ -6,9 +6,9 @@ import { MetroControlPane } from "../ControlPane/MetroControlPane";
 import { LatLngLiteral } from "leaflet";
 import { ActualLines } from "./ActualLinesWithPopups";
 import { MetroSidebar } from "../Sidebar/MetroSidebar";
-
+import { ThemeContext } from "../../contexts/ThemeContext";
 // types
-import { StationInfo } from "../../types/MetroMap";
+import { StationInfo } from "../../types/MetroMapData";
 import { DataFunctions } from "../../data/data_functions";
 
 const dataFunctions = new DataFunctions();
@@ -55,7 +55,6 @@ export class MetroMap extends React.Component<{}, State> {
     current_language: "en"
   };
   public mapRef: React.RefObject<any> = React.createRef();
-  public ThemeContext = React.createContext(this.state.current_theme);
 
   private updateStationRadius = (line: string, value: number) => {
     this.setState(prevState => ({
@@ -110,7 +109,7 @@ export class MetroMap extends React.Component<{}, State> {
   public render() {
     const { position, zoom } = this.state;
     return (
-      <this.ThemeContext.Provider value={this.state.current_theme}>
+      <ThemeContext.Provider value={this.state.current_theme.theme_name}>
         {/* <React.StrictMode> */}
         <MetroSidebar
           updateStationRadius={this.updateStationRadius}
@@ -124,20 +123,12 @@ export class MetroMap extends React.Component<{}, State> {
           ref={this.mapRef}
           zoomControl={false}
         >
-          {/* <TileLayer
-              attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            /> */}
-          {/* <TileLayer
-            attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
-            id= "mapbox.light"
-            url={`https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=${mapboxAccessToken}`}
-          /> */}
-
           <TileLayer
             attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             id={this.state.current_theme.theme_value}
-            url={`https://api.tiles.mapbox.com/v4/${this.state.current_theme.theme_value}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoib3NtLWluIiwiYSI6ImNqcnVxMTNrNTJwbHc0M250anUyOW81MjgifQ.cZnvZEyWT5AzNeO3ajg5tg`}
+            url={`https://api.tiles.mapbox.com/v4/${
+              this.state.current_theme.theme_value
+            }/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoib3NtLWluIiwiYSI6ImNqcnVxMTNrNTJwbHc0M250anUyOW81MjgifQ.cZnvZEyWT5AzNeO3ajg5tg`}
           />
           <MetroControlPane
             current_language={this.state.current_language}
@@ -151,7 +142,7 @@ export class MetroMap extends React.Component<{}, State> {
           />
         </Map>
         {/* </React.StrictMode> */}
-      </this.ThemeContext.Provider>
+      </ThemeContext.Provider>
     );
   }
 }

@@ -4,7 +4,7 @@ import { LatLngExpression, Layer } from "leaflet";
 import {
   MetroStationsData,
   MetroStationsFeature
-} from "../../types/MetroMap.d";
+} from "../../types/MetroMapData";
 import * as React from "react";
 import { GeoJSON } from "react-leaflet";
 

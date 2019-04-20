@@ -1,7 +1,7 @@
 import * as React from "react";
 import styles from "./MetroLines.module.css";
 import { Stations } from "./MetroStations";
-import { StationInfo } from "../../../types/MetroMap";
+import { StationInfo } from "../../../types/MetroMapData";
 import { DataFunctions } from "../../../data/data_functions";
 
 const dataFunctions = new DataFunctions();
@@ -19,7 +19,7 @@ export const Lines = (lineProps: LinesProps) => {
         {lineProps.line_names.map((lineName: string) => (
           <Stations
             line_name={lineName}
-            stations_on_line={dataFunctions.getStationsOnLine(lineName)}
+            stations_on_line={lineProps.stations_on_line}
             key={lineName}
             onLineSelect={lineProps.onLineSelect}
             zoomToLine={lineProps.zoomToLine}

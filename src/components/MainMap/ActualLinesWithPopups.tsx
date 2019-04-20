@@ -1,7 +1,7 @@
 import * as React from "react";
 import { CircleMarker, Popup } from "react-leaflet";
 import { LatLngExpression } from "leaflet";
-import { MetroStationsData, MetroStationsFeature } from "../../types/MetroMap";
+import { MetroStationsData, MetroStationsFeature } from "../../types/MetroMapData";
 
 export interface ActualLinesProps {
   line_info: Array<{
