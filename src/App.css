@@ -1,15 +1,21 @@
 body {
   padding-bottom: 30px;
 }
+
 h1,
 h2,
 p {
   font-family: sans-serif;
   text-align: center;
 }
+
 .leaflet-container {
   height: 100vh;
   width: 100%;
 }
 
-.leaflet-fade-anim .leaflet-tile,.leaflet-zoom-anim .leaflet-zoom-animated { will-change:auto !important; }
+.leaflet-fade-anim .leaflet-tile,
+.leaflet-zoom-anim .leaflet-zoom-animated {
+  will-change: auto !important;
+}
+

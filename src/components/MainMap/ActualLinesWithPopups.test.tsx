@@ -25,6 +25,6 @@ const metroStationsSampleData:MetroStationsData = {
     }]
   } as MetroStationsData
 
-it('renders without crashing', () => {
+it('actual lines component renders without crashing', () => {
   shallow(<ActualLines line_info= {[{line_key:'red', line_data:metroStationsSampleData}]}/>);
 });

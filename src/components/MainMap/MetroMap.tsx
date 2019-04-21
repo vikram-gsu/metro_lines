@@ -4,12 +4,22 @@ import { MetroControlPane } from "../ControlPane/MetroControlPane";
 // import Control from 'react-leaflet-control';
 // import { Feature, Geometry, GeoJsonProperties, GeoJsonObject } from "geojson";
 import { LatLngLiteral } from "leaflet";
+import { addLocaleData, IntlProvider } from "react-intl";
+import en from "react-intl/locale-data/en";
+import te from "react-intl/locale-data/te";
+import hi from "react-intl/locale-data/hi";
+import ur from "react-intl/locale-data/ur";
+
 import { ActualLines } from "./ActualLinesWithPopups";
-import { MetroSidebar } from "../Sidebar/MetroSidebar";
+// import { ActualLines } from "./ActualLines";
+import MetroSidebar from "../Sidebar/MetroSidebar";
 import { ThemeContext } from "../../contexts/ThemeContext";
 // types
 import { StationInfo } from "../../types/MetroMapData";
 import { DataFunctions } from "../../data/data_functions";
+import messages from "../../i18n/messages";
+import { flattenMessages } from "../../utils/flattenMessages";
+addLocaleData([...en, ...te, ...hi, ...ur]);
 
 const dataFunctions = new DataFunctions();
 interface LineKey {
@@ -31,6 +41,7 @@ interface State {
   zoom: number;
   stations_on_line: Array<StationInfo>;
   current_language: string;
+  selected_station: string;
 }
 
 const themes: Theme[] = [
@@ -52,7 +63,8 @@ export class MetroMap extends React.Component<{}, State> {
     position: { lat: 17.42271835184761, lng: 78.64974975585939 },
     zoom: 11,
     stations_on_line: [],
-    current_language: "en"
+    current_language: "en",
+    selected_station: ""
   };
   public mapRef: React.RefObject<any> = React.createRef();
 
@@ -79,7 +91,10 @@ export class MetroMap extends React.Component<{}, State> {
       ...prevState,
       // position: {lat : 17.4241047, lng: 78.4570069},
       zoom: 12,
-      stations_on_line: dataFunctions.getStationsOnLine(line)
+      stations_on_line: dataFunctions.getStationsOnLine(
+        line,
+        prevState.station_marker_radius
+      )
     }));
   };
 
@@ -88,7 +103,7 @@ export class MetroMap extends React.Component<{}, State> {
       line_key: this.state.line_keys.filter(
         line_color => line_color.color === line
       )[0]["key"] as string,
-      line_data: dataFunctions.getGeoJsonDataForLine(
+      line_data: dataFunctions.getLineFilteredData(
         line,
         this.state.station_marker_radius
       )
@@ -106,43 +121,54 @@ export class MetroMap extends React.Component<{}, State> {
     });
   };
 
+  public highlightStation = (stationName: string) => {
+    this.setState({ selected_station: stationName });
+  };
+
   public render() {
     const { position, zoom } = this.state;
     return (
-      <ThemeContext.Provider value={this.state.current_theme.theme_name}>
-        {/* <React.StrictMode> */}
-        <MetroSidebar
-          updateStationRadius={this.updateStationRadius}
-          zoomToLine={this.zoomToLine}
-          stations_on_line={this.state.stations_on_line}
-          current_theme={this.state.current_theme.theme_name}
-        />
-        <Map
-          center={position}
-          zoom={zoom}
-          ref={this.mapRef}
-          zoomControl={false}
-        >
-          <TileLayer
-            attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-            id={this.state.current_theme.theme_value}
-            url={`https://api.tiles.mapbox.com/v4/${
-              this.state.current_theme.theme_value
-            }/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoib3NtLWluIiwiYSI6ImNqcnVxMTNrNTJwbHc0M250anUyOW81MjgifQ.cZnvZEyWT5AzNeO3ajg5tg`}
-          />
-          <MetroControlPane
-            current_language={this.state.current_language}
-            current_theme_name={this.state.current_theme.theme_name}
-            handleLanguageChange={this.handleLanguageChange}
-            handleThemeChange={this.handleThemeChange}
-          />
+      <IntlProvider
+        locale={this.state.current_language}
+        messages={flattenMessages(messages[this.state.current_language])}
+      >
+        <ThemeContext.Provider value={this.state.current_theme.theme_name}>
+          <React.StrictMode>
+            <MetroSidebar
+              updateStationRadius={this.updateStationRadius}
+              zoomToLine={this.zoomToLine}
+              stations_on_line={this.state.stations_on_line}
+              current_theme={this.state.current_theme.theme_name}
+              hightlightStation={this.highlightStation}
+            />
+            <Map
+              center={position}
+              zoom={zoom}
+              ref={this.mapRef}
+              zoomControl={false}
+            >
+              <TileLayer
+                attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                id={this.state.current_theme.theme_value}
+                url={`https://api.tiles.mapbox.com/v4/${
+                  this.state.current_theme.theme_value
+                }/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoib3NtLWluIiwiYSI6ImNqcnVxMTNrNTJwbHc0M250anUyOW81MjgifQ.cZnvZEyWT5AzNeO3ajg5tg`}
+              />
+              <MetroControlPane
+                current_language={this.state.current_language}
+                current_theme_name={this.state.current_theme.theme_name}
+                handleLanguageChange={this.handleLanguageChange}
+                handleThemeChange={this.handleThemeChange}
+              />
 
-          <ActualLines
-            line_info={[this.getLineInfo("red"), this.getLineInfo("blue")]}
-          />
-        </Map>
-        {/* </React.StrictMode> */}
-      </ThemeContext.Provider>
+              <ActualLines
+                line_info={[this.getLineInfo("red"), this.getLineInfo("blue")]}
+                selected_station={this.state.selected_station}
+              />
+            </Map>
+          </React.StrictMode>
+        </ThemeContext.Provider>
+      </IntlProvider>
     );
   }
 }

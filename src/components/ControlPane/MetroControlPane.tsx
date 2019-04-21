@@ -28,7 +28,21 @@ export const MetroControlPane = ({current_language, current_theme_name, handleLa
                   checked={current_language === "te"}
                   onChange={handleLanguageChange}
                 />
-                <label htmlFor="te">Telugu</label>
+                <label htmlFor="te">తెలుగు</label>
+                <input
+                  type="radio"
+                  id="hi"
+                  checked={current_language === "hi"}
+                  onChange={handleLanguageChange}
+                />
+                <label htmlFor="te">हिंदी</label>
+                <input
+                  type="radio"
+                  id="ur"
+                  checked={current_language === "ur"}
+                  onChange={handleLanguageChange}
+                />
+                <label htmlFor="te">اردو </label>
               </form>
               <form>
                 <input

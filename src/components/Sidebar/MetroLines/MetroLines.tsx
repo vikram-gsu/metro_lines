@@ -10,6 +10,7 @@ export interface LinesProps {
   line_names: string[];
   onLineSelect(line: string, value: number): void;
   zoomToLine(line: string): void;
+  highlightStation(stationName: string): void;
 }
 
 export const Lines = (lineProps: LinesProps) => {
@@ -23,6 +24,7 @@ export const Lines = (lineProps: LinesProps) => {
             key={lineName}
             onLineSelect={lineProps.onLineSelect}
             zoomToLine={lineProps.zoomToLine}
+            highlightStation={lineProps.highlightStation}
           />
         ))}
       </ul>

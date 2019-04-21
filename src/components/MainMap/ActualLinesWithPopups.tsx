@@ -1,17 +1,26 @@
 import * as React from "react";
 import { CircleMarker, Popup } from "react-leaflet";
 import { LatLngExpression } from "leaflet";
-import { MetroStationsData, MetroStationsFeature } from "../../types/MetroMapData";
+import {
+  MetroStationsData,
+  MetroStationsFeature
+} from "../../types/MetroMapData";
+import { ExtendedMarker } from "./ExtendedCircleMarker";
 
 export interface ActualLinesProps {
   line_info: Array<{
     line_key: string;
     line_data: MetroStationsData;
   }>;
+  selected_station: string;
   // getCircleMarker(feature:MetroStationsFeature, latlng:LatLngExpression):Layer
 }
 
-export const ActualLines = ({ line_info }: ActualLinesProps) => {
+export const ActualLines = ({
+  line_info,
+  selected_station
+}: ActualLinesProps) => {
+
   return (
     <>
       {line_info.map(({ line_key, line_data }) =>
