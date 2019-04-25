@@ -24,8 +24,8 @@ export const ActualLines = ({ line_info }: ActualLinesProps) => {
     const geojsonMarkerOptions = {
       radius: feature.properties.station_radius,
       fillColor:
-        feature.properties.line.indexOf("/") === -1
-          ? feature.properties.line
+        feature.properties.line_name.indexOf("/") === -1
+          ? feature.properties.line_name
           : "yellow",
       color: "#000",
       weight: 1,

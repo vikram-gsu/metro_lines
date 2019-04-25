@@ -2,6 +2,8 @@ import * as React from 'react';
 import { StationInfo } from "../../../types/MetroMapData.d";
 import { DataFunctions } from "../../../data/data_functions";
 import {StationTimes} from './StationTimes';
+import styles from './MetroStationPanel.module.css';
+
 const dataFunctions = new DataFunctions();
 
 interface CircleSVGProps {
@@ -22,50 +24,91 @@ const CircleSVG = ({ color, radius }: CircleSVGProps) => (
   </svg>
 );
 
+export interface StationDetailProps {
+  stationInfo: StationInfo;
+}
+const StationDetail = (props: StationDetailProps) => {
+  const {station_name, station_type, line_name, mmts_connection, 
+    rail_connection, bus_connection, parking_type} = props.stationInfo;
+  const connectingStations = station_type === 'connecting'?line_name.split('/'):null
+  const hasConnections = connectingStations || bus_connection || mmts_connection || rail_connection
+  return (
+    <div>
+      <h3>{station_name}</h3>
+      <div>
+        {hasConnections?
+        <div>
+          Connection available for: 
+          <ul>
+          {connectingStations && <li>{connectingStations[0]} and {connectingStations[1]} metro lines</li>}
+          {bus_connection && <li>Local Bus Network</li>}
+          {mmts_connection && <li>MMTS Train Network</li>}
+          {rail_connection && <li>Indian Train Network</li>}
+          </ul>
+        </div>
+        :
+        <div>No Connections available</div>
+        }
+        <div>
+          Parking: 
+          {parking_type === "none" && <span>No Parking available in this station</span>}
+          {parking_type === "street" && <span>Street parking only</span>}
+          {parking_type === "additional" && <span>Additional Parking space available(in addition to street parking)</span>}
+          
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export interface StationProps {
-  station: StationInfo;
+  stationInfo: StationInfo;
   highlightStation(stationName: string): void;
 }
 
 export interface StationState {
   stationTimes?: StationTimes;
   nextTrain: string;
+  showPanel:boolean;
 }
 
-// const NextTrainStatus = () => {
-//   return (
 
-//   );
-// }
 
-export class Station extends React.Component<StationProps, StationState> {
+export class MetroStationPanel extends React.Component<StationProps, StationState> {
 
   state = {
     stationTimes: undefined,
-    nextTrain: ''
+    nextTrain: '',
+    showPanel: false
   }
   onStationNameHover = () => {
     // this.props.highlightStation(this.props.station.name);
   };
 
   onStationNameClick = () => {
-    this.setState({
+    this.setState(prevState => ({
       // stationTimes: dataFunctions.getTrainTimesForStation(this.props.station.name, true),
-      nextTrain: dataFunctions.getNextTrainTime(this.props.station.name, true)
-    })
+      nextTrain: dataFunctions.getNextTrainTime(this.props.stationInfo.station_name, true),
+      showPanel: !prevState.showPanel
+    }))
   };
 
   render() {
-    const { station } = this.props;
+    const { stationInfo } = this.props;
     return (
       <li
         onMouseEnter={this.onStationNameHover}
         onClick={this.onStationNameClick}
       >
-        <CircleSVG color={station.line} radius={station.station_radius} />
-        <span>{station.name}</span>
-
-        {this.state.nextTrain != '' && <span>Next Train in {this.state.nextTrain} minutes</span>}
+        <div className={styles.stationName}>
+          <CircleSVG color={stationInfo.line_name} radius={stationInfo.station_radius} />
+          <span>{stationInfo.station_name}</span>
+          <ul className= {styles.nextTrain}>
+            <li className={styles.nextTrain}>→ LB Nagar in {this.state.nextTrain} mins</li>
+            <li className={styles.nextTrain}>→ Miyapur in {this.state.nextTrain} mins</li>
+          </ul>
+        </div>
+        {this.state.showPanel && <StationDetail stationInfo={stationInfo} />}
         {/* {this.state.stationTimes && <StationTimes stationTimes={this.state.stationTimes!} />} */}
       </li>
     );

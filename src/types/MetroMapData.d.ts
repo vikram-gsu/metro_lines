@@ -1,11 +1,11 @@
 export interface StationInfo {
-  "name": string,
-  "station": "normal"|"connecting",
-  "line": "red"|"red/blue"|"red/green" | "blue"| "green",
+  "station_name": string,
+  "station_type": "normal"|"connecting",
+  "line_name": "red"|"red/blue"|"red/green" | "blue"| "green",
   "mmts_connection": boolean,
   "rail_connection": boolean,
   "bus_connection": boolean,
-  "parking": "additional"|"street"|"none",
+  "parking_type": "additional"|"street"|"none",
   "station_radius": number
 }
 

@@ -1,0 +1,17 @@
+.nextTrain {
+  color: white;
+  background:#CD3D73;
+  text-transform: uppercase;
+  font-size: 0.75em;
+  list-style: none;
+  padding:0;
+  margin: 0;
+  font-weight: bold;
+  flex:1;
+}
+
+.stationName {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

@@ -7,17 +7,17 @@ export class DataFunctions {
     metroStations.features
       .filter(
         feature =>
-          feature.properties.line === line ||
-          feature.properties.line.indexOf(line) !== -1
+          feature.properties.line_name === line ||
+          feature.properties.line_name.indexOf(line) !== -1
       )
-      .map(feature => feature.properties.name);
+      .map(feature => feature.properties.station_name);
 
   public getStationsOnLine = (line: string, stationRadius: number) =>
     metroStations.features
       .filter(
         feature =>
-          feature.properties.line === line ||
-          feature.properties.line.indexOf(line) !== -1
+          feature.properties.line_name === line ||
+          feature.properties.line_name.indexOf(line) !== -1
       )
       .map(feature => ({
         ...feature.properties,
@@ -29,8 +29,8 @@ export class DataFunctions {
     features: metroStations.features
       .filter(
         feature =>
-          feature.properties.line == line ||
-          feature.properties.line.indexOf(line) != -1
+          feature.properties.line_name == line ||
+          feature.properties.line_name.indexOf(line) != -1
       )
       .map(feature => ({
         ...feature,
@@ -75,7 +75,7 @@ export class DataFunctions {
 
   public getNextTrainTime = (stationName: string, weekdays: boolean) => {
     const startingStationStartTime = 630;
-    const fn = (feature:MetroStationsFeature) => feature.properties.name === stationName;
+    const fn = (feature:MetroStationsFeature) => feature.properties.station_name === stationName;
     const currentStationStartTime = 630 + (metroStations.features.findIndex(fn) + 1) * 2;
     const currentStationEndTime = 2230 + (metroStations.features.findIndex(fn) + 1) * 2;
 
@@ -94,7 +94,7 @@ export class DataFunctions {
   public getNextTrainTimeInReverse = (stationName: string, weekdays: boolean) => {
     const startingStationStartTime = 630;
     
-    const fn = (feature:MetroStationsFeature) => feature.properties.name === stationName;
+    const fn = (feature:MetroStationsFeature) => feature.properties.station_name === stationName;
     const currentStationStartTime = 630 + (metroStations.features.findIndex(fn) + 1) * 2;
     const currentStationEndTime = 2230 + (metroStations.features.findIndex(fn) + 1) * 2;
 

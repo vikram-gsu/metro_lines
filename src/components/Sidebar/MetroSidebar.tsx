@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Sidebar, Tab } from "react-leaflet-sidebarv2";
 import {injectIntl, InjectedIntl} from 'react-intl';
-import { Lines } from "./MetroLines/MetroLines";
+import { MetroLines } from "./MetroLines/MetroLines";
 import { StationInfo } from "../../types/MetroMapData";
 import {ThemeContext} from '../../contexts/ThemeContext';
 import { ThemedSidebar } from './ThemedSidebar';
@@ -34,7 +34,7 @@ const MetroSidebar = ({
       position="right"
     >
       <Tab id="home" header={intl.formatMessage({id: "home"})} icon="fa fa-home">
-        <Lines
+        <MetroLines
           stations_on_line={stations_on_line}
           line_names={metro_lines}
           onLineSelect={updateStationRadius}

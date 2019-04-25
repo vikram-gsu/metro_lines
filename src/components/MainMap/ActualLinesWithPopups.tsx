@@ -31,19 +31,19 @@ export const ActualLines = ({
           return (
             <CircleMarker
               center={latlngCoords}
-              key={feature.properties.name}
+              key={feature.properties.station_name}
               radius={feature.properties.station_radius}
               color={"#000"}
               fillColor={
-                feature.properties.line.indexOf("/") === -1
-                  ? feature.properties.line
+                feature.properties.line_name.indexOf("/") === -1
+                  ? feature.properties.line_name
                   : "yellow"
               }
               opacity={1}
               fillOpacity={0.8}
               weight={1}
             >
-              <Popup>{feature.properties.name}</Popup>
+              <Popup>{feature.properties.station_name}</Popup>
             </CircleMarker>
           );
         })

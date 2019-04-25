@@ -1,7 +1,7 @@
 import * as React from "react";
 import styles from "./MetroLines.module.css";
 import { StationInfo } from "../../../types/MetroMapData.d";
-import { Station } from "./MetroStationPanel";
+import { MetroStationPanel } from "./MetroStationPanel";
 import { ThemedButton } from '../ThemedButton';
 const classNames = require("classnames");
 
@@ -13,7 +13,7 @@ interface StationsProps {
   highlightStation(stationName: string): void;
 }
 
-const Stations = (stationsProps: StationsProps) => {
+const MetroStations = (stationsProps: StationsProps) => {
   const onLineButtonClick = () => {
     stationsProps.zoomToLine(stationsProps.line_name);
   };
@@ -30,9 +30,9 @@ const Stations = (stationsProps: StationsProps) => {
     return (
       <ul className={styles.stationList}>
         {stationsProps.stations_on_line.map(station => (
-          <Station
-            key={station.name}
-            station={station}
+          <MetroStationPanel
+            key={station.station_name}
+            stationInfo={station}
             highlightStation={stationsProps.highlightStation}
           />
         ))}
@@ -42,6 +42,7 @@ const Stations = (stationsProps: StationsProps) => {
   return (
     <li>
       <ThemedButton
+      color="red"
         // className={classNames(styles.primary, styles[stationsProps.line_name])}
         // onMouseEnter={onLineButtonHoverIn}
         // onMouseLeave={onLineButtonHoverOut}
@@ -51,10 +52,10 @@ const Stations = (stationsProps: StationsProps) => {
       </ThemedButton>
       {stationsProps.stations_on_line.length !== 0 &&
         stationsProps.stations_on_line.filter(
-          station => station.line === stationsProps.line_name
+          station => station.line_name === stationsProps.line_name
         ).length !== 0 && <StationNameList />}
     </li>
   );
 };
 
-export { Stations };
+export { MetroStations };
