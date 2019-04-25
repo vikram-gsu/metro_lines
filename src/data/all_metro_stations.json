@@ -4,13 +4,13 @@
   "features": [{
       "type": "Feature",
       "properties": {
-        "name": "Miyapur",
-        "station": "normal",
-        "line": "red",
+        "station_name": "Miyapur",
+        "station_type": "normal",
+        "line_name": "red",
         "mmts_connection": false,
         "rail_connection": false,
         "bus_connection": false,
-        "parking": "additional"
+        "parking_type": "additional"
       },
       "geometry": {
         "type": "Point",
@@ -20,13 +20,13 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "JNTU College",
-        "station": "normal",
-        "line": "red",
+        "station_name": "JNTU College",
+        "station_type": "normal",
+        "line_name": "red",
         "mmts_connection": false,
         "rail_connection": false,
         "bus_connection": false,
-        "parking": "street"
+        "parking_type": "street"
       },
       "geometry": {
         "type": "Point",
@@ -36,13 +36,13 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "KPHB Colony",
-        "station": "normal",
-        "line": "red",
+        "station_name": "KPHB Colony",
+        "station_type": "normal",
+        "line_name": "red",
         "mmts_connection": false,
         "rail_connection": false,
         "bus_connection": false,
-        "parking": "street"
+        "parking_type": "street"
       },
       "geometry": {
         "type": "Point",
@@ -52,13 +52,13 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Kukatpally",
-        "station": "normal",
-        "line": "red",
+        "station_name": "Kukatpally",
+        "station_type": "normal",
+        "line_name": "red",
         "mmts_connection": false,
         "rail_connection": false,
         "bus_connection": false,
-        "parking": "additional"
+        "parking_type": "additional"
       },
       "geometry": {
         "type": "Point",
@@ -68,13 +68,13 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Balanagar",
-        "station": "normal",
-        "line": "red",
+        "station_name": "Balanagar",
+        "station_type": "normal",
+        "line_name": "red",
         "mmts_connection": false,
         "rail_connection": false,
         "bus_connection": false,
-        "parking": "additional"
+        "parking_type": "additional"
       },
       "geometry": {
         "type": "Point",
@@ -84,13 +84,13 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Moosapet",
-        "station": "normal",
-        "line": "red",
+        "station_name": "Moosapet",
+        "station_type": "normal",
+        "line_name": "red",
         "mmts_connection": false,
         "rail_connection": false,
         "bus_connection": false,
-        "parking": "street"
+        "parking_type": "street"
       },
       "geometry": {
         "type": "Point",
@@ -100,13 +100,13 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Bharat Nagar",
-        "station": "normal",
-        "line": "red",
+        "station_name": "Bharat Nagar",
+        "station_type": "normal",
+        "line_name": "red",
         "mmts_connection": true,
         "rail_connection": false,
         "bus_connection": false,
-        "parking": "additional"
+        "parking_type": "additional"
       },
       "geometry": {
         "type": "Point",
@@ -116,13 +116,13 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Erragadda",
-        "station": "normal",
-        "line": "red",
+        "station_name": "Erragadda",
+        "station_type": "normal",
+        "line_name": "red",
         "mmts_connection": false,
         "rail_connection": false,
         "bus_connection": false,
-        "parking": "street"
+        "parking_type": "street"
       },
       "geometry": {
         "type": "Point",
@@ -132,13 +132,13 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "ESI",
-        "station": "normal",
-        "line": "red",
+        "station_name": "ESI",
+        "station_type": "normal",
+        "line_name": "red",
         "mmts_connection": false,
         "rail_connection": false,
         "bus_connection": false,
-        "parking": "street"
+        "parking_type": "street"
       },
       "geometry": {
         "type": "Point",
@@ -148,13 +148,13 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "S.R.Nagar",
-        "station": "normal",
-        "line": "red",
+        "station_name": "S.R.Nagar",
+        "station_type": "normal",
+        "line_name": "red",
         "mmts_connection": false,
         "rail_connection": false,
         "bus_connection": false,
-        "parking": "street"
+        "parking_type": "street"
       },
       "geometry": {
         "type": "Point",
@@ -164,13 +164,13 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Ameerpet",
-        "station": "connecting",
-        "line": "red/blue",
+        "station_name": "Ameerpet",
+        "station_type": "connecting",
+        "line_name": "red/blue",
         "mmts_connection": false,
         "rail_connection": false,
         "bus_connection": false,
-        "parking": "additional"
+        "parking_type": "additional"
       },
       "geometry": {
         "type": "Point",
@@ -180,13 +180,13 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Punjagutta",
-        "station": "normal",
-        "line": "red",
+        "station_name": "Punjagutta",
+        "station_type": "normal",
+        "line_name": "red",
         "mmts_connection": false,
         "rail_connection": false,
         "bus_connection": false,
-        "parking": "none"
+        "parking_type": "none"
       },
       "geometry": {
         "type": "Point",
@@ -196,13 +196,13 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Irrum Manzil",
-        "station": "normal",
-        "line": "red",
+        "station_name": "Irrum Manzil",
+        "station_type": "normal",
+        "line_name": "red",
         "mmts_connection": false,
         "rail_connection": false,
         "bus_connection": false,
-        "parking": "additional"
+        "parking_type": "additional"
       },
       "geometry": {
         "type": "Point",
@@ -212,13 +212,13 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Khairatabad",
-        "station": "normal",
-        "line": "red",
+        "station_name": "Khairatabad",
+        "station_type": "normal",
+        "line_name": "red",
         "mmts_connection": true,
         "rail_connection": false,
         "bus_connection": false,
-        "parking": "street"
+        "parking_type": "street"
       },
       "geometry": {
         "type": "Point",
@@ -228,13 +228,13 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Lakdi ka pul",
-        "station": "normal",
-        "line": "red",
+        "station_name": "Lakdi ka pul",
+        "station_type": "normal",
+        "line_name": "red",
         "mmts_connection": true,
         "rail_connection": false,
         "bus_connection": false,
-        "parking": "street"
+        "parking_type": "street"
       },
       "geometry": {
         "type": "Point",
@@ -244,13 +244,13 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Assembly",
-        "station": "normal",
-        "line": "red",
+        "station_name": "Assembly",
+        "station_type": "normal",
+        "line_name": "red",
         "mmts_connection": false,
         "rail_connection": false,
         "bus_connection": false,
-        "parking": "street"
+        "parking_type": "street"
       },
       "geometry": {
         "type": "Point",
@@ -260,13 +260,13 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Nampally",
-        "station": "normal",
-        "line": "red",
+        "station_name": "Nampally",
+        "station_type": "normal",
+        "line_name": "red",
         "mmts_connection": true,
         "rail_connection": true,
         "bus_connection": false,
-        "parking": "additional"
+        "parking_type": "additional"
       },
       "geometry": {
         "type": "Point",
@@ -276,13 +276,13 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Gandhi Bhavan",
-        "station": "normal",
-        "line": "red",
+        "station_name": "Gandhi Bhavan",
+        "station_type": "normal",
+        "line_name": "red",
         "mmts_connection": false,
         "rail_connection": false,
         "bus_connection": false,
-        "parking": "additional"
+        "parking_type": "additional"
       },
       "geometry": {
         "type": "Point",
@@ -292,13 +292,13 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Osmania Medical College",
-        "station": "normal",
-        "line": "red",
+        "station_name": "Osmania Medical College",
+        "station_type": "normal",
+        "line_name": "red",
         "mmts_connection": false,
         "rail_connection": false,
         "bus_connection": false,
-        "parking": "street"
+        "parking_type": "street"
       },
       "geometry": {
         "type": "Point",
@@ -308,13 +308,13 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "MGBS",
-        "station": "normal",
-        "line": "red/green",
+        "station_name": "MGBS",
+        "station_type": "normal",
+        "line_name": "red/green",
         "mmts_connection": false,
         "rail_connection": false,
         "bus_connection": true,
-        "parking": "additional"
+        "parking_type": "additional"
       },
       "geometry": {
         "type": "Point",
@@ -324,13 +324,13 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Malakpet",
-        "station": "normal",
-        "line": "red",
+        "station_name": "Malakpet",
+        "station_type": "normal",
+        "line_name": "red",
         "mmts_connection": true,
         "rail_connection": false,
         "bus_connection": false,
-        "parking": "none"
+        "parking_type": "none"
       },
       "geometry": {
         "type": "Point",
@@ -340,13 +340,13 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "New Market",
-        "station": "normal",
-        "line": "red",
+        "station_name": "New Market",
+        "station_type": "normal",
+        "line_name": "red",
         "mmts_connection": false,
         "rail_connection": false,
         "bus_connection": false,
-        "parking": "street"
+        "parking_type": "street"
       },
       "geometry": {
         "type": "Point",
@@ -356,13 +356,13 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Moosarambagh",
-        "station": "normal",
-        "line": "red",
+        "station_name": "Moosarambagh",
+        "station_type": "normal",
+        "line_name": "red",
         "mmts_connection": false,
         "rail_connection": false,
         "bus_connection": false,
-        "parking": "street"
+        "parking_type": "street"
       },
       "geometry": {
         "type": "Point",
@@ -372,13 +372,13 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Dilsukhnagar",
-        "station": "normal",
-        "line": "red",
+        "station_name": "Dilsukhnagar",
+        "station_type": "normal",
+        "line_name": "red",
         "mmts_connection": false,
         "rail_connection": false,
         "bus_connection": true,
-        "parking": "street"
+        "parking_type": "street"
       },
       "geometry": {
         "type": "Point",
@@ -388,13 +388,13 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Chaitanyapuri",
-        "station": "normal",
-        "line": "red",
+        "station_name": "Chaitanyapuri",
+        "station_type": "normal",
+        "line_name": "red",
         "mmts_connection": false,
         "rail_connection": false,
         "bus_connection": false,
-        "parking": "street"
+        "parking_type": "street"
       },
       "geometry": {
         "type": "Point",
@@ -404,13 +404,13 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Victoria Memorial",
-        "station": "normal",
-        "line": "red",
+        "station_name": "Victoria Memorial",
+        "station_type": "normal",
+        "line_name": "red",
         "mmts_connection": false,
         "rail_connection": false,
         "bus_connection": false,
-        "parking": "additional"
+        "parking_type": "additional"
       },
       "geometry": {
         "type": "Point",
@@ -420,13 +420,13 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "LB Nagar",
-        "station": "normal",
-        "line": "red",
+        "station_name": "LB Nagar",
+        "station_type": "normal",
+        "line_name": "red",
         "mmts_connection": false,
         "rail_connection": false,
         "bus_connection": false,
-        "parking": "additional"
+        "parking_type": "additional"
       },
       "geometry": {
         "type": "Point",
@@ -436,13 +436,13 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Nagole",
-        "station": "normal",
-        "line": "blue",
+        "station_name": "Nagole",
+        "station_type": "normal",
+        "line_name": "blue",
         "mmts_connection": false,
         "rail_connection": false,
         "bus_connection": false,
-        "parking": "additional"
+        "parking_type": "additional"
       },
       "geometry": {
         "type": "Point",

@@ -2,7 +2,7 @@ import React from 'react';
 // import ReactDOM from 'react-dom';
 import {ActualLines} from './ActualLinesWithPopups';
 import { shallow } from 'enzyme';
-import {MetroStationsData} from '../../types/MetroMap';
+import {MetroStationsData} from '../../types/MetroMapData';
 
 const metroStationsSampleData:MetroStationsData = {
   "type": "FeatureCollection",
@@ -25,6 +25,6 @@ const metroStationsSampleData:MetroStationsData = {
     }]
   } as MetroStationsData
 
-it('renders without crashing', () => {
+it('actual lines component renders without crashing', () => {
   shallow(<ActualLines line_info= {[{line_key:'red', line_data:metroStationsSampleData}]}/>);
 });

@@ -4,7 +4,7 @@ import { LatLngExpression, Layer } from "leaflet";
 import {
   MetroStationsData,
   MetroStationsFeature
-} from "../../types/MetroMap.d";
+} from "../../types/MetroMapData";
 import * as React from "react";
 import { GeoJSON } from "react-leaflet";
 
@@ -24,8 +24,8 @@ export const ActualLines = ({ line_info }: ActualLinesProps) => {
     const geojsonMarkerOptions = {
       radius: feature.properties.station_radius,
       fillColor:
-        feature.properties.line.indexOf("/") === -1
-          ? feature.properties.line
+        feature.properties.line_name.indexOf("/") === -1
+          ? feature.properties.line_name
           : "yellow",
       color: "#000",
       weight: 1,

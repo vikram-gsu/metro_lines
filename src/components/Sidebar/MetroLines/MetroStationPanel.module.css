@@ -1,0 +1,42 @@
+
+
+/* .stationName {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} */
+
+.stationName {
+  display: grid;
+  grid-template: 1fr 1fr/0.2fr 1fr;
+  grid-template-areas: 
+    "marker title"
+    "nextTrain nextTrain";
+  border: 1px solid grey;
+}
+.stationName:hover {
+  border-color: #CD3D73;
+  cursor: pointer;
+}
+
+.nextTrain {
+  color: white;
+  background:#CD3D73;
+  text-transform: uppercase;
+  font-size: 0.75em;
+  list-style: none;
+  padding:0;
+  margin: 0;
+  font-weight: bold;
+  /* flex:1; */
+  grid-area: nextTrain;
+  
+}
+
+.marker {
+  grid-area: marker
+}
+
+.title {
+  grid-area: title
+}

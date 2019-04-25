@@ -1,53 +1,62 @@
 import * as React from "react";
 import styles from "./MetroLines.module.css";
-import { StationInfo } from "../../../types/MetroMap";
-
+import { StationInfo } from "../../../types/MetroMapData.d";
+import { MetroStationPanel } from "./MetroStationPanel";
+import { ThemedButton } from "../ThemedButton";
 const classNames = require("classnames");
 
-interface StationProps {
+interface StationsProps {
   line_name: string;
   stations_on_line: Array<StationInfo>;
   onLineSelect(line: string, value: number): void;
   zoomToLine(line: string): void;
+  highlightStation(stationName: string): void;
 }
 
-const Stations = (stationProps: StationProps) => {
+const MetroStations = (stationsProps: StationsProps) => {
   const onLineButtonClick = () => {
-    stationProps.zoomToLine(stationProps.line_name);
+    stationsProps.zoomToLine(stationsProps.line_name);
   };
 
   const onLineButtonHoverIn = () => {
-    stationProps.onLineSelect(stationProps.line_name, 1);
+    stationsProps.onLineSelect(stationsProps.line_name, 1);
   };
 
   const onLineButtonHoverOut = () => {
-    stationProps.onLineSelect(stationProps.line_name, -1);
+    stationsProps.onLineSelect(stationsProps.line_name, -1);
   };
+
   const StationNameList = () => {
     return (
       <ul className={styles.stationList}>
-        {stationProps.stations_on_line.map(station => (
-          <li key={station.name}>{station.name}</li>
+        {stationsProps.stations_on_line.map(station => (
+          <MetroStationPanel
+            key={station.station_name}
+            stationInfo={station}
+            highlightStation={stationsProps.highlightStation}
+          />
         ))}
       </ul>
     );
   };
   return (
     <li>
-      <button
-        className={classNames(styles.primary, styles[stationProps.line_name])}
-        onMouseEnter={onLineButtonHoverIn}
-        onMouseLeave={onLineButtonHoverOut}
+      <ThemedButton
+        color="red"
+        className={styles.lineButton}
+        // className={classNames(styles.primary, styles[stationsProps.line_name])}
+        // onMouseEnter={onLineButtonHoverIn}
+        // onMouseLeave={onLineButtonHoverOut}
         onClick={onLineButtonClick}
       >
-        {stationProps.line_name}
-      </button>
-      {stationProps.stations_on_line.length !== 0 &&
-        stationProps.stations_on_line.filter(
-          station => station.line === stationProps.line_name
+        {stationsProps.line_name}
+      </ThemedButton>
+      {stationsProps.stations_on_line.length !== 0 &&
+        stationsProps.stations_on_line.filter(
+          station => station.line_name === stationsProps.line_name
         ).length !== 0 && <StationNameList />}
     </li>
   );
 };
 
-export { Stations };
+export { MetroStations };
