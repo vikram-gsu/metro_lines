@@ -43,6 +43,7 @@ const MetroStations = (stationsProps: StationsProps) => {
     <li>
       <ThemedButton
         color="red"
+        className={styles.lineButton}
         // className={classNames(styles.primary, styles[stationsProps.line_name])}
         // onMouseEnter={onLineButtonHoverIn}
         // onMouseLeave={onLineButtonHoverOut}
