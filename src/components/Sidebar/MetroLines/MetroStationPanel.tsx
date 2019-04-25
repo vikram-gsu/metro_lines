@@ -9,10 +9,11 @@ const dataFunctions = new DataFunctions();
 interface CircleSVGProps {
   color: string;
   radius: number;
+
 }
 
 const CircleSVG = ({ color, radius }: CircleSVGProps) => (
-  <svg height="30" width="30">
+  <svg height="30" width="30" className={styles.marker}>
     <circle
       cx="20"
       cy="20"
@@ -102,7 +103,7 @@ export class MetroStationPanel extends React.Component<StationProps, StationStat
       >
         <div className={styles.stationName}>
           <CircleSVG color={stationInfo.line_name} radius={stationInfo.station_radius} />
-          <span>{stationInfo.station_name}</span>
+          <span className={styles.title}>{stationInfo.station_name}</span>
           <ul className= {styles.nextTrain}>
             <li className={styles.nextTrain}>→ LB Nagar in {this.state.nextTrain} mins</li>
             <li className={styles.nextTrain}>→ Miyapur in {this.state.nextTrain} mins</li>

@@ -16,7 +16,7 @@ export interface LinesProps {
 export const MetroLines = (lineProps: LinesProps) => {
   return (
     <React.Fragment>
-      <ul className={styles.listTabStyle}>
+      <ul className={styles.lineButtons}>
         {lineProps.line_names.map((lineName: string) => (
           <MetroStations
             line_name={lineName}

@@ -2,7 +2,7 @@ import * as React from "react";
 import styles from "./MetroLines.module.css";
 import { StationInfo } from "../../../types/MetroMapData.d";
 import { MetroStationPanel } from "./MetroStationPanel";
-import { ThemedButton } from '../ThemedButton';
+import { ThemedButton } from "../ThemedButton";
 const classNames = require("classnames");
 
 interface StationsProps {
@@ -42,7 +42,7 @@ const MetroStations = (stationsProps: StationsProps) => {
   return (
     <li>
       <ThemedButton
-      color="red"
+        color="red"
         // className={classNames(styles.primary, styles[stationsProps.line_name])}
         // onMouseEnter={onLineButtonHoverIn}
         // onMouseLeave={onLineButtonHoverOut}
