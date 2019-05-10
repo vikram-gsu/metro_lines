@@ -2,7 +2,7 @@ import * as React from 'react';
 import { StationInfo } from "../../../types/MetroMapData.d";
 import { DataFunctions } from "../../../data/data_functions";
 import {StationTimes} from './StationTimes';
-import styles from './MetroStationPanel.module.css';
+import styles from './SingleStationPanel.module.css';
 
 const dataFunctions = new DataFunctions();
 

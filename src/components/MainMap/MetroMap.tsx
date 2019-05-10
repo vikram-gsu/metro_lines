@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Map, TileLayer } from "react-leaflet";
 import { MetroControlPane } from "../ControlPane/MetroControlPane";
 // import Control from 'react-leaflet-control';
@@ -49,7 +49,8 @@ const themes: Theme[] = [
   { theme_name: "dark", theme_value: "mapbox.dark" }
 ];
 
-export class MetroMap extends React.Component<{}, State> {
+
+export default class MetroMap extends React.Component<{}, State> {
   public state: State = {
     sidebar_collapsed: false,
     sidebar_selected: "home",

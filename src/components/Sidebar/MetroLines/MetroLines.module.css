@@ -9,20 +9,7 @@
   border-color: red
 }
 
-
-.stationList {
-  list-style-type: none;
-  padding:0;
-  margin:0;
-  grid-area: stationList;
-}
-
-.stationList>li {
-  padding: 1em 0;
-}
-
-.lineButtons {
-  list-style-type: none;
+.linesPanel {
   display: grid;
   grid-template: 0.2fr 1fr/1fr 1fr 1fr;
   grid-template-areas:
@@ -30,6 +17,22 @@
     "stationList stationList stationList";
 }
 
-.lineButton {
+.stationList {
+  padding:0;
+  margin:0;
+  grid-area: stationList;
+}
+
+.stationList>li {
+  list-style-type: none;
+  padding: 1em 0;
+}
+
+.linesPanel > ul {
+  display: flex;
   grid-area: titleButtons;
+}
+
+.linesPanel > ul >li {
+  list-style-type: none;
 }

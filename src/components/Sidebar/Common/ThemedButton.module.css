@@ -1,9 +1,14 @@
-.lightButton {
+.light {
   background: white;
   color: black;
 }
 
-.darkButton {
+.dark {
   background: #444;
   color: white;
+}
+
+.lineButton {
+  width: 5em;
+
 }
