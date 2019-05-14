@@ -6,6 +6,12 @@
   align-items: center;
 } */
 
+.stationPanel {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
 .stationName {
   display: grid;
   grid-template: 1fr 1fr/0.2fr 1fr;

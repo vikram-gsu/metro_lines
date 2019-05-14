@@ -11,7 +11,7 @@
 
 .linesPanel {
   display: grid;
-  grid-template: 0.2fr 1fr/1fr 1fr 1fr;
+  grid-template: 0.03fr 1fr/1fr 1fr 1fr;
   grid-template-areas:
     "titleButtons titleButtons titleButtons"
     "stationList stationList stationList";
@@ -28,11 +28,11 @@
   padding: 1em 0;
 }
 
-.linesPanel > ul {
+.titleButtons {
   display: flex;
   grid-area: titleButtons;
 }
 
-.linesPanel > ul >li {
+.titleButtons >li {
   list-style-type: none;
 }

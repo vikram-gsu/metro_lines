@@ -1,7 +1,6 @@
 import * as React from "react";
-import styles from "./MetroLines.module.css";
 import { StationInfo } from "../../../types/MetroMapData.d";
-import { MetroStationPanel } from "./StationPanel";
+import { MetroStationPanel } from "./SingleStationPanel";
 
 interface StationsProps {
   line_name: string;
@@ -22,7 +21,7 @@ const MetroStations = (stationsProps: StationsProps) => {
 
   const StationNameList = () => {
     return (
-      <ul className={styles.stationList}>
+      <ul>
         {stationsProps.stations_on_line.map(station => (
           <MetroStationPanel
             key={station.station_name}

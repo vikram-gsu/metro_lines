@@ -23,7 +23,7 @@ export class MetroLines extends React.Component<MetroLinesProps> {
   render(){
     return (
       <div className={styles.linesPanel}>
-        <ul>
+        <ul className={styles.titleButtons}>
             {this.props.line_names.map((lineName: string) => (
               <li key={lineName}>
                 <ThemedButton
@@ -35,12 +35,14 @@ export class MetroLines extends React.Component<MetroLinesProps> {
               </li>
             ))}
         </ul>
+        <div className={styles.stationList}>
         <MetroStations
           line_name={this.state.selected_line}
           stations_on_line={this.props.stations_on_line}
           onLineSelect={this.props.onLineSelect}
           highlightStation={this.props.highlightStation}
         />
+        </div>
       </div>
     );
   }

@@ -100,6 +100,7 @@ export class MetroStationPanel extends React.Component<StationProps, StationStat
       <li
         onMouseEnter={this.onStationNameHover}
         onClick={this.onStationNameClick}
+        className={styles.stationPanel}
       >
         <div className={styles.stationName}>
           <CircleSVG color={stationInfo.line_name} radius={stationInfo.station_radius} />
